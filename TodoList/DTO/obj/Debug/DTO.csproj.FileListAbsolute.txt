@@ -4,3 +4,9 @@ C:\Users\ADMIN\Desktop\3117410024_NguyenThiBangChau_DCT1174\XDPMTMHPhanLop\TodoL
 C:\Users\ADMIN\Desktop\3117410024_NguyenThiBangChau_DCT1174\XDPMTMHPhanLop\TodoList\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\Desktop\3117410024_NguyenThiBangChau_DCT1174\XDPMTMHPhanLop\TodoList\DTO\obj\Debug\DTO.dll
 C:\Users\ADMIN\Desktop\3117410024_NguyenThiBangChau_DCT1174\XDPMTMHPhanLop\TodoList\DTO\obj\Debug\DTO.pdb
+C:\Users\DELL\Desktop\XDPMPhanLop\TodoList\DTO\bin\Debug\DTO.dll
+C:\Users\DELL\Desktop\XDPMPhanLop\TodoList\DTO\bin\Debug\DTO.pdb
+C:\Users\DELL\Desktop\XDPMPhanLop\TodoList\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\DELL\Desktop\XDPMPhanLop\TodoList\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\XDPMPhanLop\TodoList\DTO\obj\Debug\DTO.dll
+C:\Users\DELL\Desktop\XDPMPhanLop\TodoList\DTO\obj\Debug\DTO.pdb

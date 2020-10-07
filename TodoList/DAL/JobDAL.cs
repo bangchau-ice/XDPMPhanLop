@@ -14,12 +14,12 @@ namespace DAL
         {
             DAL.ConnectDB();
             DAL.conn.Open();
-            string sql = "Insert into Job value ('" + job.jTitle + "','" + job.jStarday + "','" + job.jEndday + "','" + job.jStatus + "','"
+            string sql = "Insert into DBJob values ('" + job.jTitle + "','" + job.jStarday + "','" + job.jEndday + "','"
                 + job.jPartner + "','" + job.jCircle + "','" + job.jAttachments + "')";
             SqlCommand cmd = new SqlCommand(sql, DAL.conn);
             cmd.ExecuteNonQuery();
         }
 
-       
+
     }
 }
