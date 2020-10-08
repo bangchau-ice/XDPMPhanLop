@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,18 @@
     </Compile>
     <Compile Include="AddJob.Designer.cs">
       <DependentUpon>AddJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chitietJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chitietJob.Designer.cs">
+      <DependentUpon>chitietJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListJob.Designer.cs">
+      <DependentUpon>ListJob.cs</DependentUpon>
     </Compile>
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
@@ -72,6 +85,9 @@
     </Compile>
     <EmbeddedResource Include="AddJob.resx">
       <DependentUpon>AddJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListJob.resx">
+      <DependentUpon>ListJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -133,6 +149,9 @@
       <Project>{22E2C780-C1BE-49E0-815A-2E550BB10D25}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="chitietJob.aspx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

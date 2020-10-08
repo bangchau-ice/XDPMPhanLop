@@ -24,8 +24,10 @@ namespace GUI
             i = UserBLL.SignIn(txtEmail.Text, txtPass.Text);
             if (i == 1)
             {
-                AddJob a = new AddJob();
+                ListJob a = new ListJob();
                 a.Show();
+                //AddJob a = new AddJob();
+                //a.Show();
             }
             else MessageBox.Show("Email hoặc Password không đúng. Vui lòng nhập lại!");
         }

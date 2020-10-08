@@ -25,3 +25,12 @@ D:\Downloads_new\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.csproj.CoreCompileInputs
 D:\Downloads_new\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\Downloads_new\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.dll
 D:\Downloads_new\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.pdb
+C:\Users\ASUS\Desktop\XDPMPhanLop\TodoList\DAL\bin\Debug\DAL.dll
+C:\Users\ASUS\Desktop\XDPMPhanLop\TodoList\DAL\bin\Debug\DAL.pdb
+C:\Users\ASUS\Desktop\XDPMPhanLop\TodoList\DAL\bin\Debug\DTO.dll
+C:\Users\ASUS\Desktop\XDPMPhanLop\TodoList\DAL\bin\Debug\DTO.pdb
+C:\Users\ASUS\Desktop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\ASUS\Desktop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\ASUS\Desktop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.dll
+C:\Users\ASUS\Desktop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.pdb
