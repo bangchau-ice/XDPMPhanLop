@@ -39,5 +39,18 @@ namespace BLL
             return 0;
 
         }
+        public static UserDTO getUser(int id)
+        {
+            UserDTO user = new UserDTO();
+            user= DAL.UserDAL.getUser(id);
+            return user;
+        }
+
+        public static List<UserDTO> ListU(List<CommentDTO> cmn)
+        {
+            List<UserDTO> data = new List<UserDTO>();
+            data = DAL.UserDAL.listU(cmn);
+            return data;
+        }
     }
 }

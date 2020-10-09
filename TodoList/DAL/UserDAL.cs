@@ -56,5 +56,17 @@ namespace DAL
             }
             return data;
         }
+        public static List<UserDTO> listU(List<CommentDTO> cmn)
+        {
+            List<UserDTO> data = new List<UserDTO>();
+            for(int i=0; i<cmn.Count(); i++)
+            {
+                UserDTO user = new UserDTO();
+                user = getUser(cmn[i].userId);
+                data.Add(user);
+            }
+            return data;
+
+        }
     }
 }

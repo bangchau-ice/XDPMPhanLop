@@ -34,3 +34,12 @@ C:\Users\ASUS\Desktop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.csproj.CoreCompileI
 C:\Users\ASUS\Desktop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\ASUS\Desktop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.dll
 C:\Users\ASUS\Desktop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.pdb
+C:\Users\ADMIN\Desktop\3117410024_NguyenThiBangChau_DCT1174\XDPMTMHPhanLop\XDPMPhanLop\TodoList\DAL\bin\Debug\DAL.dll
+C:\Users\ADMIN\Desktop\3117410024_NguyenThiBangChau_DCT1174\XDPMTMHPhanLop\XDPMPhanLop\TodoList\DAL\bin\Debug\DAL.pdb
+C:\Users\ADMIN\Desktop\3117410024_NguyenThiBangChau_DCT1174\XDPMTMHPhanLop\XDPMPhanLop\TodoList\DAL\bin\Debug\DTO.dll
+C:\Users\ADMIN\Desktop\3117410024_NguyenThiBangChau_DCT1174\XDPMTMHPhanLop\XDPMPhanLop\TodoList\DAL\bin\Debug\DTO.pdb
+C:\Users\ADMIN\Desktop\3117410024_NguyenThiBangChau_DCT1174\XDPMTMHPhanLop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\ADMIN\Desktop\3117410024_NguyenThiBangChau_DCT1174\XDPMTMHPhanLop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\3117410024_NguyenThiBangChau_DCT1174\XDPMTMHPhanLop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\ADMIN\Desktop\3117410024_NguyenThiBangChau_DCT1174\XDPMTMHPhanLop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.dll
+C:\Users\ADMIN\Desktop\3117410024_NguyenThiBangChau_DCT1174\XDPMTMHPhanLop\XDPMPhanLop\TodoList\DAL\obj\Debug\DAL.pdb

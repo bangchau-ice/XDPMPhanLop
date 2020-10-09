@@ -39,6 +39,8 @@
             this.dtNgbd = new System.Windows.Forms.DateTimePicker();
             this.dtNgkt = new System.Windows.Forms.DateTimePicker();
             this.cbNglc = new System.Windows.Forms.ComboBox();
+            this.dBUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.todoList_DBDataSet1 = new GUI.TodoList_DBDataSet1();
             this.txtfile = new System.Windows.Forms.TextBox();
             this.txtDinhkem = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -46,12 +48,6 @@
             this.cbPhamvi = new System.Windows.Forms.ComboBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.todoList_DBDataSet = new GUI.TodoList_DBDataSet();
-            this.dBJobBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dBJobTableAdapter = new GUI.TodoList_DBDataSetTableAdapters.DBJobTableAdapter();
-            this.todoList_DBDataSet1 = new GUI.TodoList_DBDataSet1();
-            this.dBUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dBUserTableAdapter = new GUI.TodoList_DBDataSet1TableAdapters.DBUserTableAdapter();
             this.jobidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jobtitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jobstardayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,11 +55,15 @@
             this.jobpartnerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jobcircleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jobattachmentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBJobBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet1)).BeginInit();
+            this.dBJobBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.todoList_DBDataSet = new GUI.TodoList_DBDataSet();
+            this.dBJobTableAdapter = new GUI.TodoList_DBDataSetTableAdapters.DBJobTableAdapter();
+            this.dBUserTableAdapter = new GUI.TodoList_DBDataSet1TableAdapters.DBUserTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dBUserBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBJobBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -162,6 +162,17 @@
             this.cbNglc.Size = new System.Drawing.Size(161, 21);
             this.cbNglc.TabIndex = 9;
             this.cbNglc.ValueMember = "user_id";
+            this.cbNglc.SelectedIndexChanged += new System.EventHandler(this.cbNglc_SelectedIndexChanged);
+            // 
+            // dBUserBindingSource
+            // 
+            this.dBUserBindingSource.DataMember = "DBUser";
+            this.dBUserBindingSource.DataSource = this.todoList_DBDataSet1;
+            // 
+            // todoList_DBDataSet1
+            // 
+            this.todoList_DBDataSet1.DataSetName = "TodoList_DBDataSet1";
+            this.todoList_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtfile
             // 
@@ -235,34 +246,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(745, 150);
             this.dataGridView1.TabIndex = 15;
-            // 
-            // todoList_DBDataSet
-            // 
-            this.todoList_DBDataSet.DataSetName = "TodoList_DBDataSet";
-            this.todoList_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dBJobBindingSource
-            // 
-            this.dBJobBindingSource.DataMember = "DBJob";
-            this.dBJobBindingSource.DataSource = this.todoList_DBDataSet;
-            // 
-            // dBJobTableAdapter
-            // 
-            this.dBJobTableAdapter.ClearBeforeFill = true;
-            // 
-            // todoList_DBDataSet1
-            // 
-            this.todoList_DBDataSet1.DataSetName = "TodoList_DBDataSet1";
-            this.todoList_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dBUserBindingSource
-            // 
-            this.dBUserBindingSource.DataMember = "DBUser";
-            this.dBUserBindingSource.DataSource = this.todoList_DBDataSet1;
-            // 
-            // dBUserTableAdapter
-            // 
-            this.dBUserTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // jobidDataGridViewTextBoxColumn
             // 
@@ -307,6 +291,24 @@
             this.jobattachmentsDataGridViewTextBoxColumn.HeaderText = "Tệp đính kèm";
             this.jobattachmentsDataGridViewTextBoxColumn.Name = "jobattachmentsDataGridViewTextBoxColumn";
             // 
+            // dBJobBindingSource
+            // 
+            this.dBJobBindingSource.DataMember = "DBJob";
+            this.dBJobBindingSource.DataSource = this.todoList_DBDataSet;
+            // 
+            // todoList_DBDataSet
+            // 
+            this.todoList_DBDataSet.DataSetName = "TodoList_DBDataSet";
+            this.todoList_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dBJobTableAdapter
+            // 
+            this.dBJobTableAdapter.ClearBeforeFill = true;
+            // 
+            // dBUserTableAdapter
+            // 
+            this.dBUserTableAdapter.ClearBeforeFill = true;
+            // 
             // AddJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,11 +333,11 @@
             this.Name = "AddJob";
             this.Text = "AddJob";
             this.Load += new System.EventHandler(this.AddJob_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBJobBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBUserBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBJobBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

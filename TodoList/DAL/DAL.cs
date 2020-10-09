@@ -13,7 +13,7 @@ namespace DAL
         public static SqlConnection conn;
         public static void ConnectDB()
         {
-            string connectstring = @"Data Source=LAPTOP-N0VOJ1RP\SQLEXPRESS;Initial Catalog=TodoList_DB;Integrated Security=True";
+            string connectstring = @"Data Source=DESKTOP-0EO86VE\SQLEXPRESS;Initial Catalog=TodoList_DB;Integrated Security=True";
             // string cnnstring = 
             //ConfigurationManager.ConnectionStrings[connectstring].ConnectionString;
             conn = new SqlConnection(connectstring);

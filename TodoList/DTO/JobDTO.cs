@@ -12,8 +12,8 @@ namespace DTO
         private string job_title;
         private string job_starday;
         private string job_endday;
-        private string job_status;
-        private string job_partner;
+        private int job_status;
+        private int job_partner;
         private string job_circle;
         private string job_attachments;
 
@@ -61,7 +61,7 @@ namespace DTO
                 job_endday = value;
             }
         }
-        public string jStatus
+        public int jStatus
         {
             get
             {
@@ -72,7 +72,7 @@ namespace DTO
                 job_status = value;
             }
         }
-        public string jPartner
+        public int jPartner
         {
             get
             {

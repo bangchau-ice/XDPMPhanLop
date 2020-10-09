@@ -33,8 +33,8 @@ namespace GUI
                         job.jTitle = txtTencv.Text;
                         job.jStarday = dtNgbd.Value.ToString();
                         job.jEndday = dtNgkt.Value.ToString();
-                        job.jStatus = "1";
-                        job.jPartner = cbNglc.SelectedValue.ToString();
+                        job.jStatus = 0;
+                        job.jPartner = int.Parse(cbNglc.SelectedValue.ToString());
                         job.jCircle = cbPhamvi.Text;
                         job.jAttachments = txtfile.Text;
                         JobDAL.insert(job);
@@ -83,6 +83,29 @@ namespace GUI
             // TODO: This line of code loads data into the 'todoList_DBDataSet.DBJob' table. You can move, or remove it, as needed.
             this.dBJobTableAdapter.Fill(this.todoList_DBDataSet.DBJob);
 
+        }
+
+        
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            DataGridViewRow row = new DataGridViewRow();
+            row = dataGridView1.Rows[e.RowIndex];
+            txtTencv.Text = row.Cells[1].Value.ToString();
+            dtNgbd.Text = row.Cells[2].Value.ToString();
+            dtNgkt.Text = row.Cells[3].Value.ToString();
+            cbNglc.Text = row.Cells[4].Value.ToString();
+            cbPhamvi.Text = row.Cells[5].Value.ToString();
+            txtfile.Text = row.Cells[6].Value.ToString();
+        }
+
+        private void cbNglc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id = cbNglc.SelectedValue.ToString();
+            //MessageBox.Show(id);
+            UserJob ub = new UserJob(id);
+            ub.Show();
         }
     }
 }

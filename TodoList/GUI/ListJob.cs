@@ -42,7 +42,7 @@ namespace GUI
         private void bttim_Click(object sender, EventArgs e)
         {
             int tim = Int16.Parse(txttim.Text);
-            DataTable dt = JobDAL.getJob(tim);
+            DataTable dt = BLL.JobBLL.search(tim);
             dataGridView1.DataSource = dt;
         }
 
@@ -125,6 +125,44 @@ namespace GUI
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dataGridView1.Rows[e.RowIndex];
+            int id= int.Parse(row.Cells[2].Value.ToString());
+            ChiTiet ct = new ChiTiet(id);
+            ct.Show();
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "btXoa")
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa công việc này","Đóng hộp thoại", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row = dataGridView1.Rows[e.RowIndex];
+                    int id = int.Parse(row.Cells[1].Value.ToString());
+                    BLL.JobBLL.deleteJob(id);
+                    MessageBox.Show("Xóa thành công");
+                    DataTable dt = JobDAL.get_AllJob();
+                    dataGridView1.DataSource = dt;
+                    //dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[e.RowIndex].Index);
+
+                }
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex].Name == "btSua")
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dataGridView1.Rows[e.RowIndex];
+                int id = int.Parse(row.Cells[2].Value.ToString());
+                formsua update = new formsua(id);
+                update.Show();
+
+            }
         }
     }
 

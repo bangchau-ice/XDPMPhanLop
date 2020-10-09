@@ -53,6 +53,12 @@
     <Compile Include="AddJob.Designer.cs">
       <DependentUpon>AddJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTiet.Designer.cs">
+      <DependentUpon>ChiTiet.cs</DependentUpon>
+    </Compile>
     <Compile Include="chitietJob.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,8 +89,43 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TodoList_DBDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TodoList_DBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TodoList_DBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TodoList_DBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TodoList_DBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TodoList_DBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TodoList_DBDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TodoList_DBDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TodoList_DBDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="updateGUIcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateGUIcs.Designer.cs">
+      <DependentUpon>updateGUIcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserJob.Designer.cs">
+      <DependentUpon>UserJob.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddJob.resx">
       <DependentUpon>AddJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChiTiet.resx">
+      <DependentUpon>ChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListJob.resx">
       <DependentUpon>ListJob.cs</DependentUpon>
@@ -100,6 +141,12 @@
     </Compile>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateGUIcs.resx">
+      <DependentUpon>updateGUIcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserJob.resx">
+      <DependentUpon>UserJob.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -131,6 +178,50 @@
     </None>
     <None Include="TodoList_DBDataSet1.xss">
       <DependentUpon>TodoList_DBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TodoList_DBDataSet2.xsc">
+      <DependentUpon>TodoList_DBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TodoList_DBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TodoList_DBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TodoList_DBDataSet2.xss">
+      <DependentUpon>TodoList_DBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TodoList_DBDataSet3.xsc">
+      <DependentUpon>TodoList_DBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="TodoList_DBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TodoList_DBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TodoList_DBDataSet3.xss">
+      <DependentUpon>TodoList_DBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="TodoList_DBDataSet4.xsc">
+      <DependentUpon>TodoList_DBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="TodoList_DBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TodoList_DBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TodoList_DBDataSet4.xss">
+      <DependentUpon>TodoList_DBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="TodoList_DBDataSet5.xsc">
+      <DependentUpon>TodoList_DBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="TodoList_DBDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TodoList_DBDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TodoList_DBDataSet5.xss">
+      <DependentUpon>TodoList_DBDataSet5.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
