@@ -24,19 +24,21 @@ namespace BLL
         public static int SignIn(string email, string pass)
         {
             UserDTO u = new UserDTO();
-            //int i = 0;
+            int i = 0;
             List<UserDTO> data = new List<UserDTO>();
             data = UserDAL.get_AllUser();
+            
             //for (int j = 0; j < data.Count; j++)
             foreach (UserDTO item in data)
             {
                 string e = item.uEmail.ToString();
                 if (item.uEmail == email)
-                    return 1;
+                    if (item.uPass == pass)
+                        i= item.uId;
                 //else i = 0;
             }
 
-            return 0;
+            return i;
 
         }
         public static UserDTO getUser(int id)

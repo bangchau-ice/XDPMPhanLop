@@ -16,6 +16,7 @@ namespace DTO
         private int job_partner;
         private string job_circle;
         private string job_attachments;
+        private int user_id;
 
         public int jId
         {
@@ -103,6 +104,17 @@ namespace DTO
             set
             {
                 job_attachments = value;
+            }
+        }
+        public int juser_id
+        {
+            get
+            {
+                return user_id;
+            }
+            set
+            {
+                user_id = value;
             }
         }
         public JobDTO() { }

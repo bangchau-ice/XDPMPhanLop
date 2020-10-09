@@ -3,6 +3,7 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
@@ -26,12 +27,32 @@ namespace GUI
         public ListJob()
         {
             InitializeComponent();
+            System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+            string id = config.AppSettings.Settings["uid"].Value;
+            string type = config.AppSettings.Settings["utype"].Value;
+            UserDTO a = new UserDTO();
+            a = BLL.UserBLL.getUser(int.Parse(id));
+            txtTnd.Text = a.uName;
         }
 
         private void ListJob_Load(object sender, EventArgs e)
         {
-            DataTable dt = JobDAL.get_AllJob();
-            dataGridView1.DataSource = dt;
+            // TODO: This line of code loads data into the 'todoList_DBDataSet6.DBUser' table. You can move, or remove it, as needed.
+            this.dBUserTableAdapter.Fill(this.todoList_DBDataSet6.DBUser);
+            System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+            string id = config.AppSettings.Settings["uid"].Value;
+            string type = config.AppSettings.Settings["utype"].Value;
+            if (type == "2") {
+                DataTable dt = BLL.JobBLL.getALLJob();
+
+                dataGridView1.DataSource = dt;
+            }
+            else
+            {
+                DataTable dt = BLL.JobBLL.getALLJob(int.Parse(id));
+
+                dataGridView1.DataSource = dt;
+            }
         }
         private void btthem_Click(object sender, EventArgs e)
         {
@@ -58,9 +79,9 @@ namespace GUI
 
 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       /* private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            chitietJob myjob = new chitietJob();
+          //  chitietJob myjob = new chitietJob();
             //  myjob.textBox1.Text = Convert.ToString(dataGridView1[0, row]).ToString);
             //   myjob.textBox1.Text = dataGridView1.CurrentRow.Cells[0].ToString();
             myjob.textBox1.Text = dataGridView1.SelectedCells[2].Value.ToString();
@@ -72,7 +93,7 @@ namespace GUI
             myjob.textBox7.Text = dataGridView1.SelectedCells[8].Value.ToString();
             myjob.textBox8.Text = dataGridView1.SelectedCells[9].Value.ToString();
             myjob.ShowDialog();
-        }
+        }*/
         private void lbtim_Click(object sender, EventArgs e)
         {
 
@@ -148,7 +169,9 @@ namespace GUI
                     int id = int.Parse(row.Cells[1].Value.ToString());
                     BLL.JobBLL.deleteJob(id);
                     MessageBox.Show("Xóa thành công");
-                    DataTable dt = JobDAL.get_AllJob();
+                    System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+                    string uid = config.AppSettings.Settings["id"].Value;
+                    DataTable dt = JobDAL.get_AllJob(int.Parse(uid));
                     dataGridView1.DataSource = dt;
                     //dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[e.RowIndex].Index);
 
@@ -163,6 +186,35 @@ namespace GUI
                 update.Show();
 
             }
+        }
+
+        private void btrf_Click(object sender, EventArgs e)
+        {
+            System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+            string id = config.AppSettings.Settings["id"].Value;
+            DataTable dt = JobDAL.get_AllJob(int.Parse(id));
+            dataGridView1.DataSource = dt;
+        }
+
+        private void btloc_Click(object sender, EventArgs e)
+        {
+            string ngbd = dtngbd.Value.Month.ToString()+"/"+ dtngbd.Value.Day.ToString()+"/"+ dtngbd.Value.Year.ToString();
+            string ngkt = dtngkt.Value.Month.ToString() + "/" + dtngkt.Value.Day.ToString() + "/" + dtngkt.Value.Year.ToString();
+            System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+            string id = config.AppSettings.Settings["id"].Value;
+            //MessageBox.Show(ngbd);
+            string manv = cbbmnv.SelectedValue.ToString();
+            //MessageBox.Show(manv);
+            if (manv == "")
+            { DataTable dt = JobDAL.locday(ngbd, ngkt);
+                dataGridView1.DataSource = dt;
+            }
+            else
+            {
+                DataTable dt = JobDAL.loc(ngbd, ngkt, int.Parse(manv));
+                dataGridView1.DataSource = dt;
+            }
+
         }
     }
 

@@ -3,6 +3,7 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -28,17 +29,27 @@ namespace GUI
                     int result = DateTime.Compare(dtNgkt.Value, dtNgbd.Value);
                     if (result>=0)
                     {
-                        
+                        System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+                        string id = config.AppSettings.Settings["uid"].Value;
                         JobDTO job = new JobDTO();
                         job.jTitle = txtTencv.Text;
-                        job.jStarday = dtNgbd.Value.ToString();
-                        job.jEndday = dtNgkt.Value.ToString();
-                        job.jStatus = 0;
+                        job.jStarday = dtNgbd.Value.Month.ToString() + "/" + dtNgbd.Value.Day.ToString() + "/" + dtNgbd.Value.Year.ToString();
+                        job.jEndday = dtNgkt.Value.Month.ToString() + "/" + dtNgkt.Value.Day.ToString() + "/" + dtNgkt.Value.Year.ToString();
+                        job.jStatus = 0;                    
                         job.jPartner = int.Parse(cbNglc.SelectedValue.ToString());
-                        job.jCircle = cbPhamvi.Text;
+                        MessageBox.Show(cbPhamvi.SelectedIndex.ToString());
+                        if (cbPhamvi.SelectedIndex==0)
+                            job.jCircle = "0";
+                        else job.jCircle = "1";
+                        //MessageBox.Show(cbNglc.SelectedValue.ToString());
                         job.jAttachments = txtfile.Text;
+                        job.juser_id = int.Parse(id);
                         JobDAL.insert(job);
-                        this.dBJobTableAdapter.Fill(this.todoList_DBDataSet.DBJob);
+                        MessageBox.Show("Thêm thành công");
+                        txtTencv.Text = "";
+                        cbPhamvi.Text = "";
+                        txtfile.Text = "";
+                        //this.dBJobTableAdapter.Fill(this.todoList_DBDataSet.DBJob);
                     }
                     else
                     {
@@ -91,7 +102,7 @@ namespace GUI
         {
 
             DataGridViewRow row = new DataGridViewRow();
-            row = dataGridView1.Rows[e.RowIndex];
+            //row = dataGridView1.Rows[e.RowIndex];
             txtTencv.Text = row.Cells[1].Value.ToString();
             dtNgbd.Text = row.Cells[2].Value.ToString();
             dtNgkt.Text = row.Cells[3].Value.ToString();
@@ -100,12 +111,12 @@ namespace GUI
             txtfile.Text = row.Cells[6].Value.ToString();
         }
 
-        private void cbNglc_SelectedIndexChanged(object sender, EventArgs e)
+       
+
+        private void btback_Click(object sender, EventArgs e)
         {
-            string id = cbNglc.SelectedValue.ToString();
-            //MessageBox.Show(id);
-            UserJob ub = new UserJob(id);
-            ub.Show();
+            ListJob lj = new ListJob();
+            lj.Show();
         }
     }
 }

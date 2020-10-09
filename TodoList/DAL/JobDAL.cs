@@ -18,8 +18,8 @@ namespace DAL
         {
             DAL.ConnectDB();
             DAL.conn.Open();
-            string sql = "Insert into DBJob values ('" + job.jTitle + "','" + job.jStarday + "','" + job.jEndday + "','"
-                + job.jPartner + "','" + job.jCircle + "','" + job.jAttachments + "')";
+            string sql = "Insert into DBJob values (N'" + job.jTitle + "','" + job.jStarday + "','" + job.jEndday + "','"
+                + job.jCircle + "','" + job.jAttachments + "','" + job.jStatus +"','"+job.jPartner+ "','"+job.juser_id+"')";
             SqlCommand cmd = new SqlCommand(sql, DAL.conn);
             cmd.ExecuteNonQuery();
         }
@@ -31,13 +31,29 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(sql, DAL.conn);
             cmd.ExecuteNonQuery();
         }
+        public static DataTable get_AllJob(int id)
+        {
+            DAL.ConnectDB();
+            DAL.conn.Open();
+            string sql = @"SELECT DBJob.job_id as 'Mã công việc', DBJob.job_title as 'Tên công việc',
+            DBJob.job_status as 'Trạng thái', DBUser.user_name as 'Tên người tạo'
+            FROM   DBJob INNER JOIN
+             DBUser ON DBJob.user_id = DBUser.user_id where DBJob.user_id="+id+"or DBJob.job_circle like '0'";
+            SqlCommand cmd = new SqlCommand(sql, DAL.conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds.Tables[0];
+        }
+
         public static DataTable get_AllJob()
         {
             DAL.ConnectDB();
             DAL.conn.Open();
-            string sql = @"SELECT DBJob.job_id, DBJob.job_title, DBJob.job_status, DBUser.user_name
+            string sql = @"SELECT DBJob.job_id as 'Mã công việc', DBJob.job_title as 'Tên công việc',
+            DBJob.job_status as 'Trạng thái', DBUser.user_name as 'Tên người tạo'
             FROM   DBJob INNER JOIN
-             DBUser ON DBJob.job_partner = DBUser.user_id";
+             DBUser ON DBJob.user_id = DBUser.user_id";
             SqlCommand cmd = new SqlCommand(sql, DAL.conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -120,14 +136,16 @@ FROM DBJob INNER JOIN
             SqlCommand cmd = new SqlCommand(sql, DAL.conn);
             cmd.ExecuteNonQuery();
         }
-        /*public static DataTable loc(string ngbd, string ngkt,int manv)
+       public static DataTable loc(string ngbd, string ngkt,int manv)
         {
             DAL.ConnectDB();
             DAL.conn.Open();
-            string sql = @"SELECT DBJob.job_id, DBJob.job_title, DBJob.job_starday, DBJob.job_endday, DBJob.job_partner, DBJob.job_circle, DBJob.job_attachments, Comment.cmt_content, DBUser.user_name
-FROM   DBJob INNER JOIN
-             Comment ON DBJob.job_id = Comment.job_id INNER JOIN
-             DBUser ON Comment.user_id = DBUser.user_id where DBJob.job_starday>=" + ngbd + "and DBJob.job_starday<=" + ngkt + "and DBUser.user_id=" + manv; 
+            string sql = @"SELECT DBJob.job_id as 'Mã công việc', DBJob.job_title as 'Tên công việc',
+            DBJob.job_status as 'Trạng thái', DBUser.user_name as 'Tên người tạo'
+            FROM   DBJob INNER JOIN
+             DBUser ON DBJob.user_id = DBUser.user_id 
+where DBJob.job_circle like '0' 
+and DBJob.job_starday like '" + ngbd + "' and DBJob.job_endday like '" + ngkt + "' and DBJob.user_id="+manv; 
                         
             SqlCommand cmd = new SqlCommand(sql, DAL.conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -139,16 +157,18 @@ FROM   DBJob INNER JOIN
         {
             DAL.ConnectDB();
             DAL.conn.Open();
-            string sql = @"SELECT DBJob.job_id, DBJob.job_title, DBJob.job_starday, DBJob.job_endday, DBJob.job_partner, DBJob.job_circle, DBJob.job_attachments, Comment.cmt_content, DBUser.user_name
-FROM   DBJob INNER JOIN
-             Comment ON DBJob.job_id = Comment.job_id INNER JOIN
-             DBUser ON Comment.user_id = DBUser.user_id where DBJob.job_starday>=" + ngbd + "and DBJob.job_starday<=" + ngkt ;
+            string sql = @"  SELECT DBJob.job_id as 'Mã công việc', DBJob.job_title as 'Tên công việc',
+            DBJob.job_status as 'Trạng thái', DBUser.user_name as 'Tên người tạo'
+            FROM   DBJob INNER JOIN
+             DBUser ON DBJob.user_id = DBUser.user_id 
+where DBJob.job_circle like '0' 
+and DBJob.job_starday like '"+ngbd+"' and DBJob.job_endday like '" +ngkt+"'";
 
             SqlCommand cmd = new SqlCommand(sql, DAL.conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds.Tables[0];
-        }*/
+        }
     }
 }

@@ -47,21 +47,13 @@
             this.lbPhamvi = new System.Windows.Forms.Label();
             this.cbPhamvi = new System.Windows.Forms.ComboBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.jobidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobtitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobstardayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobenddayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobpartnerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobcircleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobattachmentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dBJobBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.todoList_DBDataSet = new GUI.TodoList_DBDataSet();
             this.dBJobTableAdapter = new GUI.TodoList_DBDataSetTableAdapters.DBJobTableAdapter();
             this.dBUserTableAdapter = new GUI.TodoList_DBDataSet1TableAdapters.DBUserTableAdapter();
+            this.btback = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dBUserBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBJobBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet)).BeginInit();
             this.SuspendLayout();
@@ -162,7 +154,7 @@
             this.cbNglc.Size = new System.Drawing.Size(161, 21);
             this.cbNglc.TabIndex = 9;
             this.cbNglc.ValueMember = "user_id";
-            this.cbNglc.SelectedIndexChanged += new System.EventHandler(this.cbNglc_SelectedIndexChanged);
+           // this.cbNglc.SelectedIndexChanged += new System.EventHandler(this.cbNglc_SelectedIndexChanged);
             // 
             // dBUserBindingSource
             // 
@@ -229,68 +221,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.jobidDataGridViewTextBoxColumn,
-            this.jobtitleDataGridViewTextBoxColumn,
-            this.jobstardayDataGridViewTextBoxColumn,
-            this.jobenddayDataGridViewTextBoxColumn,
-            this.jobpartnerDataGridViewTextBoxColumn,
-            this.jobcircleDataGridViewTextBoxColumn,
-            this.jobattachmentsDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.dBJobBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 332);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(745, 150);
-            this.dataGridView1.TabIndex = 15;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // jobidDataGridViewTextBoxColumn
-            // 
-            this.jobidDataGridViewTextBoxColumn.DataPropertyName = "job_id";
-            this.jobidDataGridViewTextBoxColumn.HeaderText = "Mã";
-            this.jobidDataGridViewTextBoxColumn.Name = "jobidDataGridViewTextBoxColumn";
-            this.jobidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // jobtitleDataGridViewTextBoxColumn
-            // 
-            this.jobtitleDataGridViewTextBoxColumn.DataPropertyName = "job_title";
-            this.jobtitleDataGridViewTextBoxColumn.HeaderText = "Tên công việc";
-            this.jobtitleDataGridViewTextBoxColumn.Name = "jobtitleDataGridViewTextBoxColumn";
-            // 
-            // jobstardayDataGridViewTextBoxColumn
-            // 
-            this.jobstardayDataGridViewTextBoxColumn.DataPropertyName = "job_starday";
-            this.jobstardayDataGridViewTextBoxColumn.HeaderText = "Ngày bắt đầu";
-            this.jobstardayDataGridViewTextBoxColumn.Name = "jobstardayDataGridViewTextBoxColumn";
-            // 
-            // jobenddayDataGridViewTextBoxColumn
-            // 
-            this.jobenddayDataGridViewTextBoxColumn.DataPropertyName = "job_endday";
-            this.jobenddayDataGridViewTextBoxColumn.HeaderText = "Ngày kết thúc";
-            this.jobenddayDataGridViewTextBoxColumn.Name = "jobenddayDataGridViewTextBoxColumn";
-            // 
-            // jobpartnerDataGridViewTextBoxColumn
-            // 
-            this.jobpartnerDataGridViewTextBoxColumn.DataPropertyName = "job_partner";
-            this.jobpartnerDataGridViewTextBoxColumn.HeaderText = "Người làm chung";
-            this.jobpartnerDataGridViewTextBoxColumn.Name = "jobpartnerDataGridViewTextBoxColumn";
-            // 
-            // jobcircleDataGridViewTextBoxColumn
-            // 
-            this.jobcircleDataGridViewTextBoxColumn.DataPropertyName = "job_circle";
-            this.jobcircleDataGridViewTextBoxColumn.HeaderText = "Phạm vi";
-            this.jobcircleDataGridViewTextBoxColumn.Name = "jobcircleDataGridViewTextBoxColumn";
-            // 
-            // jobattachmentsDataGridViewTextBoxColumn
-            // 
-            this.jobattachmentsDataGridViewTextBoxColumn.DataPropertyName = "job_attachments";
-            this.jobattachmentsDataGridViewTextBoxColumn.HeaderText = "Tệp đính kèm";
-            this.jobattachmentsDataGridViewTextBoxColumn.Name = "jobattachmentsDataGridViewTextBoxColumn";
-            // 
             // dBJobBindingSource
             // 
             this.dBJobBindingSource.DataMember = "DBJob";
@@ -309,12 +239,22 @@
             // 
             this.dBUserTableAdapter.ClearBeforeFill = true;
             // 
+            // btback
+            // 
+            this.btback.Location = new System.Drawing.Point(388, 341);
+            this.btback.Name = "btback";
+            this.btback.Size = new System.Drawing.Size(127, 41);
+            this.btback.TabIndex = 15;
+            this.btback.Text = "Quay về";
+            this.btback.UseVisualStyleBackColor = true;
+            this.btback.Click += new System.EventHandler(this.btback_Click);
+            // 
             // AddJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btback);
             this.Controls.Add(this.cbPhamvi);
             this.Controls.Add(this.lbPhamvi);
             this.Controls.Add(this.button1);
@@ -335,7 +275,6 @@
             this.Load += new System.EventHandler(this.AddJob_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dBUserBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBJobBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -361,19 +300,12 @@
         private System.Windows.Forms.Label lbPhamvi;
         private System.Windows.Forms.ComboBox cbPhamvi;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private TodoList_DBDataSet todoList_DBDataSet;
         private System.Windows.Forms.BindingSource dBJobBindingSource;
         private TodoList_DBDataSetTableAdapters.DBJobTableAdapter dBJobTableAdapter;
         private TodoList_DBDataSet1 todoList_DBDataSet1;
         private System.Windows.Forms.BindingSource dBUserBindingSource;
         private TodoList_DBDataSet1TableAdapters.DBUserTableAdapter dBUserTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobtitleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobstardayDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobenddayDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobpartnerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobcircleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobattachmentsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btback;
     }
 }

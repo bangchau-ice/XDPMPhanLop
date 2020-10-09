@@ -1,7 +1,9 @@
 ﻿using BLL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -22,10 +24,21 @@ namespace GUI
         {
             int i;
             i = UserBLL.SignIn(txtEmail.Text, txtPass.Text);
-            if (i == 1)
+            if (i != 0)
             {
+
                 ListJob a = new ListJob();
+                UserDTO user = new UserDTO();
+                user = UserBLL.getUser(i);
+                MessageBox.Show(user.uType.ToString());
+                System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+
+                config.AppSettings.Settings["uid"].Value=i.ToString();
+                config.AppSettings.Settings["utype"].Value=user.uType.ToString();
+                config.Save(ConfigurationSaveMode.Minimal);
+                ConfigurationManager.RefreshSection("appSettings");
                 a.Show();
+               
                 //AddJob a = new AddJob();
                 //a.Show();
             }

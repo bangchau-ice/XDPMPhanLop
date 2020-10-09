@@ -38,20 +38,31 @@
             this.lbngkt = new System.Windows.Forms.Label();
             this.dtngbd = new System.Windows.Forms.DateTimePicker();
             this.dtngkt = new System.Windows.Forms.DateTimePicker();
-            this.lblocnv = new System.Windows.Forms.Label();
-            this.txtmanv = new System.Windows.Forms.TextBox();
             this.btloc = new System.Windows.Forms.Button();
             this.lbtitle = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btXoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btSua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.todoList_DBDataSet3 = new GUI.TodoList_DBDataSet3();
             this.todoListDBDataSet31BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.todoListDBDataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btXoa = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btSua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtTnd = new System.Windows.Forms.TextBox();
+            this.btrf = new System.Windows.Forms.Button();
+            this.lblocnv = new System.Windows.Forms.Label();
+            this.cbbmnv = new System.Windows.Forms.ComboBox();
+            this.todoList_DBDataSet6 = new GUI.TodoList_DBDataSet6();
+            this.dBUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dBUserTableAdapter = new GUI.TodoList_DBDataSet6TableAdapters.DBUserTableAdapter();
+            this.dBUserBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dBUserBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.todoListDBDataSet31BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.todoListDBDataSet3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBUserBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBUserBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBUserBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // btthem
@@ -134,6 +145,7 @@
             // 
             // dtngbd
             // 
+            this.dtngbd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtngbd.Location = new System.Drawing.Point(581, 107);
             this.dtngbd.Margin = new System.Windows.Forms.Padding(2);
             this.dtngbd.Name = "dtngbd";
@@ -142,31 +154,12 @@
             // 
             // dtngkt
             // 
+            this.dtngkt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtngkt.Location = new System.Drawing.Point(581, 140);
             this.dtngkt.Margin = new System.Windows.Forms.Padding(2);
             this.dtngkt.Name = "dtngkt";
             this.dtngkt.Size = new System.Drawing.Size(135, 20);
             this.dtngkt.TabIndex = 9;
-            // 
-            // lblocnv
-            // 
-            this.lblocnv.AutoSize = true;
-            this.lblocnv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblocnv.Location = new System.Drawing.Point(389, 175);
-            this.lblocnv.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblocnv.Name = "lblocnv";
-            this.lblocnv.Size = new System.Drawing.Size(195, 20);
-            this.lblocnv.TabIndex = 10;
-            this.lblocnv.Text = "Lọc theo mã nhân viên:";
-            this.lblocnv.Click += new System.EventHandler(this.lblocnv_Click);
-            // 
-            // txtmanv
-            // 
-            this.txtmanv.Location = new System.Drawing.Point(581, 175);
-            this.txtmanv.Margin = new System.Windows.Forms.Padding(2);
-            this.txtmanv.Name = "txtmanv";
-            this.txtmanv.Size = new System.Drawing.Size(135, 20);
-            this.txtmanv.TabIndex = 11;
             // 
             // btloc
             // 
@@ -178,6 +171,7 @@
             this.btloc.TabIndex = 12;
             this.btloc.Text = "Lọc";
             this.btloc.UseVisualStyleBackColor = true;
+            this.btloc.Click += new System.EventHandler(this.btloc_Click);
             // 
             // lbtitle
             // 
@@ -202,16 +196,6 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // todoList_DBDataSet3
-            // 
-            this.todoList_DBDataSet3.DataSetName = "TodoList_DBDataSet3";
-            this.todoList_DBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // todoListDBDataSet31BindingSource
-            // 
-            this.todoListDBDataSet31BindingSource.DataSource = this.todoList_DBDataSet3;
-            this.todoListDBDataSet31BindingSource.Position = 0;
-            // 
             // btXoa
             // 
             this.btXoa.DataPropertyName = "Xóa";
@@ -227,15 +211,92 @@
             this.btSua.Name = "btSua";
             this.btSua.Text = "Sửa";
             // 
+            // todoList_DBDataSet3
+            // 
+            this.todoList_DBDataSet3.DataSetName = "TodoList_DBDataSet3";
+            this.todoList_DBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // todoListDBDataSet31BindingSource
+            // 
+            this.todoListDBDataSet31BindingSource.DataSource = this.todoList_DBDataSet3;
+            this.todoListDBDataSet31BindingSource.Position = 0;
+            // 
+            // txtTnd
+            // 
+            this.txtTnd.Location = new System.Drawing.Point(788, 15);
+            this.txtTnd.Name = "txtTnd";
+            this.txtTnd.Size = new System.Drawing.Size(134, 20);
+            this.txtTnd.TabIndex = 19;
+            // 
+            // btrf
+            // 
+            this.btrf.Location = new System.Drawing.Point(12, 212);
+            this.btrf.Name = "btrf";
+            this.btrf.Size = new System.Drawing.Size(160, 29);
+            this.btrf.TabIndex = 20;
+            this.btrf.Text = "Refresh";
+            this.btrf.UseVisualStyleBackColor = true;
+            this.btrf.Click += new System.EventHandler(this.btrf_Click);
+            // 
+            // lblocnv
+            // 
+            this.lblocnv.AutoSize = true;
+            this.lblocnv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblocnv.Location = new System.Drawing.Point(389, 175);
+            this.lblocnv.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblocnv.Name = "lblocnv";
+            this.lblocnv.Size = new System.Drawing.Size(195, 20);
+            this.lblocnv.TabIndex = 10;
+            this.lblocnv.Text = "Lọc theo mã nhân viên:";
+            this.lblocnv.Click += new System.EventHandler(this.lblocnv_Click);
+            // 
+            // cbbmnv
+            // 
+            this.cbbmnv.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dBUserBindingSource2, "user_id", true));
+            this.cbbmnv.DataSource = this.todoList_DBDataSet6;
+            this.cbbmnv.DisplayMember = "DBUser.user_name";
+            this.cbbmnv.FormattingEnabled = true;
+            this.cbbmnv.Location = new System.Drawing.Point(590, 178);
+            this.cbbmnv.Name = "cbbmnv";
+            this.cbbmnv.Size = new System.Drawing.Size(125, 21);
+            this.cbbmnv.TabIndex = 21;
+            this.cbbmnv.ValueMember = "DBUser.user_id";
+            // 
+            // todoList_DBDataSet6
+            // 
+            this.todoList_DBDataSet6.DataSetName = "TodoList_DBDataSet6";
+            this.todoList_DBDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dBUserBindingSource
+            // 
+            this.dBUserBindingSource.DataMember = "DBUser";
+            this.dBUserBindingSource.DataSource = this.todoList_DBDataSet6;
+            // 
+            // dBUserTableAdapter
+            // 
+            this.dBUserTableAdapter.ClearBeforeFill = true;
+            // 
+            // dBUserBindingSource1
+            // 
+            this.dBUserBindingSource1.DataMember = "DBUser";
+            this.dBUserBindingSource1.DataSource = this.todoList_DBDataSet6;
+            // 
+            // dBUserBindingSource2
+            // 
+            this.dBUserBindingSource2.DataMember = "DBUser";
+            this.dBUserBindingSource2.DataSource = this.todoList_DBDataSet6;
+            // 
             // ListJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 450);
+            this.Controls.Add(this.cbbmnv);
+            this.Controls.Add(this.btrf);
+            this.Controls.Add(this.txtTnd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbtitle);
             this.Controls.Add(this.btloc);
-            this.Controls.Add(this.txtmanv);
             this.Controls.Add(this.lblocnv);
             this.Controls.Add(this.dtngkt);
             this.Controls.Add(this.dtngbd);
@@ -254,6 +315,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.todoListDBDataSet31BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.todoListDBDataSet3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoList_DBDataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBUserBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBUserBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBUserBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,8 +334,6 @@
         private System.Windows.Forms.Label lbngkt;
         private System.Windows.Forms.DateTimePicker dtngbd;
         private System.Windows.Forms.DateTimePicker dtngkt;
-        private System.Windows.Forms.Label lblocnv;
-        private System.Windows.Forms.TextBox txtmanv;
         private System.Windows.Forms.Button btloc;
         private System.Windows.Forms.Label lbtitle;
         private System.Windows.Forms.BindingSource todoListDBDataSet3BindingSource;
@@ -279,6 +342,15 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewButtonColumn btXoa;
         private System.Windows.Forms.DataGridViewButtonColumn btSua;
+        private System.Windows.Forms.TextBox txtTnd;
+        private System.Windows.Forms.Button btrf;
+        private System.Windows.Forms.Label lblocnv;
+        private System.Windows.Forms.ComboBox cbbmnv;
+        private TodoList_DBDataSet6 todoList_DBDataSet6;
+        private System.Windows.Forms.BindingSource dBUserBindingSource;
+        private TodoList_DBDataSet6TableAdapters.DBUserTableAdapter dBUserTableAdapter;
+        private System.Windows.Forms.BindingSource dBUserBindingSource2;
+        private System.Windows.Forms.BindingSource dBUserBindingSource1;
         //private TodoList_DBDataSet3 todoList_DBDataSet31;
     }
 }
